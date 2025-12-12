@@ -1,110 +1,66 @@
 """
-AFRICAN LANGUAGE TRANSLATOR - DICTIONARIES PACKAGE
-Team Project with 5 Languages
+AFRICAN LANGUAGE DICTIONARIES
+Team Project - African Language Translator
+Team Lead: [Edoh Godwin]
 """
 
-# ========== IMPORT ALL 5 LANGUAGE DICTIONARIES ==========
-try:
-    from .swahili import swahili_dict
-    print("✅ Swahili dictionary loaded")
-except ImportError:
-    swahili_dict = {}
-    print("⚠️ Swahili dictionary not found - using empty")
+# ========== IMPORT ALL DICTIONARIES ==========
+from .swahili import swahili_dict    # Member 1
+from .yoruba import yoruba_dict      # Member 2
+from .hausa import hausa_dict        # Member 3
+from .zulu import zulu_dict          # Team Lead - ZULU ADDED HERE
+from .igbo import igbo_dict          # Member 4
 
-try:
-    from .yoruba import yoruba_dict
-    print("✅ Yoruba dictionary loaded")
-except ImportError:
-    yoruba_dict = {}
-    print("⚠️ Yoruba dictionary not found - using empty")
-
-try:
-    from .hausa import hausa_dict
-    print("✅ Hausa dictionary loaded")
-except ImportError:
-    hausa_dict = {}
-    print("⚠️ Hausa dictionary not found - using empty")
-
-try:
-    from .zulu import zulu_dict
-    print("✅ Zulu dictionary loaded")
-except ImportError:
-    zulu_dict = {}
-    print("⚠️ Zulu dictionary not found - using empty")
-
-try:
-    from .igbo import igbo_dict
-    print("✅ Igbo dictionary loaded")
-except ImportError:
-    igbo_dict = {}
-    print("⚠️ Igbo dictionary not found - using empty")
-
-# ========== MAIN DICTIONARY ==========
+# ========== MAIN LANGUAGE DICTIONARY ==========
 LANGUAGES = {
     "Swahili": swahili_dict,
     "Yoruba": yoruba_dict,
     "Hausa": hausa_dict,
-    "Zulu": zulu_dict,
+    "Zulu": zulu_dict,               # ZULU ADDED HERE
     "Igbo": igbo_dict,
 }
 
-# ========== HELPER VARIABLES ==========
-AVAILABLE_LANGUAGES = list(LANGUAGES.keys())
+# ========== STATISTICS ==========
+AVAILABLE_LANGUAGES = sorted(LANGUAGES.keys())
 TOTAL_LANGUAGES = len(LANGUAGES)
-
-# Count total words (skip empty dictionaries)
-TOTAL_WORDS = 0
-for lang_name, dictionary in LANGUAGES.items():
-    if dictionary:  # Only count if not empty
-        TOTAL_WORDS += len(dictionary)
+TOTAL_WORDS = sum(len(dict_obj) for dict_obj in LANGUAGES.values())
 
 # ========== HELPER FUNCTIONS ==========
-def get_language_info():
-    """Get information about all loaded languages"""
-    info = []
-    for lang_name, dictionary in LANGUAGES.items():
-        word_count = len(dictionary) if dictionary else 0
-        status = "✅ Loaded" if dictionary else "❌ Missing"
-        info.append({
-            'language': lang_name,
-            'word_count': word_count,
-            'status': status
-        })
-    return info
+def get_project_stats():
+    """Get project statistics"""
+    return {
+        "total_languages": TOTAL_LANGUAGES,
+        "total_words": TOTAL_WORDS,
+        "languages": AVAILABLE_LANGUAGES,
+        "words_per_language": {lang: len(LANGUAGES[lang]) for lang in LANGUAGES}
+    }
 
-def translate_word(english_word, target_language):
-    """Translate an English word to target language"""
+def translate(english_word, target_language):
+    """Translate English word to target language"""
     english_word = english_word.lower().strip()
-    target_language = target_language.title()  # Make first letter capital
+    target_language = target_language.title()
     
-    if target_language in LANGUAGES:
-        dictionary = LANGUAGES[target_language]
-        if dictionary and english_word in dictionary:
-            return dictionary[english_word]
-    return None
-
-def list_words_in_language(language_name):
-    """List all words available in a specific language"""
-    language_name = language_name.title()
-    if language_name in LANGUAGES:
-        dictionary = LANGUAGES[language_name]
-        if dictionary:
-            return sorted(dictionary.keys())
-    return []
+    if target_language in LANGUAGES and english_word in LANGUAGES[target_language]:
+        return LANGUAGES[target_language][english_word]
+    return f"Word '{english_word}' not found in {target_language}"
 
 # ========== STARTUP MESSAGE ==========
 print("\n" + "="*50)
-print("AFRICAN LANGUAGE TRANSLATOR INITIALIZED")
+print("🌍 AFRICAN LANGUAGE TRANSLATOR PACKAGE")
 print("="*50)
-print(f"📊 Loaded {TOTAL_LANGUAGES} languages")
-print(f"📝 Total words: {TOTAL_WORDS}")
-print("="*50 + "\n")
+print(f"📚 Languages: {', '.join(AVAILABLE_LANGUAGES)}")
+print(f"📊 Total words: {TOTAL_WORDS}")
+print("="*50)
 
-# What gets imported when someone does: from languages import *
+# Export these
 __all__ = [
     'LANGUAGES',
     'AVAILABLE_LANGUAGES',
     'TOTAL_LANGUAGES',
+    'TOTAL_WORDS',
+    'get_project_stats',
+    'translate'
+]
     'TOTAL_WORDS',
     'get_language_info',
     'translate_word',
