@@ -5,7 +5,7 @@ Team Lead: [Edoh Godwin]
 """
 
 # ========== IMPORT ALL DICTIONARIES ==========
-from .swahili import swahili_dict    # Member 1
+from .swahili import swahili_dict    # Member 1 _ Momodu Daniel
 from .yoruba import yoruba_dict      # Member 2
 from .hausa import hausa_dict        # Member 3
 from .zulu import zulu_dict          # Team Lead - ZULU ADDED HERE
