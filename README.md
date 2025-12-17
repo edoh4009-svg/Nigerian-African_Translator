@@ -8,10 +8,10 @@ A Python program that translates English words to 5 African languages. This team
 
 | # | Name | Role | Language | Contribution |
 |---|------|------|----------|--------------|
-| 1 | Momodu Daniel | Contributor | Swahili | Project management & Swahili dictionary |
+| 1 | Momodu Daniel | Contributor | Swahili |  Swahili dictionary |
 | 2 | John Bright | Contributor | Yoruba | Yoruba dictionary implementation |
 | 3 | Simpa Ibrahim | Contributor | Hausa | Hausa dictionary implementation |
-| 4 | Edoh Godwin | Team leader | Zulu | Zulu dictionary implementation |
+| 4 | Edoh Godwin | Team leader | Zulu | Project management & Zulu dictionary implementation |
 | 5 | Kamsi | Contributor | Igbo | Igbo dictionary implementation |
 
 ## 📚 Languages Included
