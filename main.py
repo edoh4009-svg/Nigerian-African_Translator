@@ -4,11 +4,11 @@ AFRICAN LANGUAGE TRANSLATOR - TEAM PROJECT
 Main Program File
 
 TEAM MEMBERS:
-1. [Team Member 1] - Swahili
-2. [Team Member 2] - Yoruba
-3. [Team Member 3] - Hausa
-4. [Team Member 4] - Zulu
-5. [Team Member 5] - Igbo
+1. [Momodu Daniel] - Swahili
+2. [John Bright] - Yoruba
+3. [Ibrahim Simpa] - Hausa
+4. [Team Leader Edoh Godwin] - Zulu
+5. [Kamsi] - Igbo
 
 DESCRIPTION:
 This program allows users to translate English words to 5 African languages.
