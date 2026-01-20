@@ -1,3 +1,6 @@
+<img width="1475" height="823" alt="screenshot1" src="https://github.com/user-attachments/assets/3df27a71-e014-41cf-83f7-8af1bc3ed1a4" />
+<img width="1361" height="721" alt="Screenshot 2026-01-20 224646" src="https://github.com/user-attachments/assets/cdfb220d-387a-44f1-afa8-4a48fd6f91e2" />
+<img width="1192" height="615" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/22b61721-8842-4685-b30d-e28b8e2c6c67" />
 # Nigerian-African_Translator
 Team project for translating English to African languages
 # 🌍 African Language Translator
