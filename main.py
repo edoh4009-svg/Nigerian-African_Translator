@@ -1,3 +1,4 @@
+import streamlit as st
 #!/usr/bin/env python3
 """
 AFRICAN LANGUAGE TRANSLATOR - TEAM PROJECT
